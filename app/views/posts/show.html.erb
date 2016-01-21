@@ -1,0 +1,18 @@
+<% if @post.image_url %>
+  <div class='parallax-container'>
+    <div class='parallax'>
+      <%= image_tag @post.image, style: 'display: block; transform: translate3d(0, 500px, 0px);', class: 'responsive-img' %>
+    </div>
+  </div>
+<% end %>
+
+<div class='section'>
+  <div class='row'>
+    <div class='col s12'>
+      <h4><%= @post.title %></h4>
+      <p><%= simple_format @post.content %></p>
+      <%= link_to 'Edit', edit_post_path(@post), class: 'waves-effect waves-light btn' %>
+      <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'waves-effect waves-light btn red' %>
+    </div>
+  </div>
+</div>

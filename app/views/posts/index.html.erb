@@ -1,0 +1,21 @@
+<div class="container">
+  <div class='section'>
+    <%= link_to '<i class="material-icons">add</i>'.html_safe, new_post_path,
+      class: 'btn-floating btn-large waves-effect waves-light red right' %>
+  </div> 
+  <% @posts.each do |post| %>
+    <div class='section'>
+      <div class='row card-panel'>
+        <div class='col s3'>
+          <%= link_to image_tag(post.image_url(:thumb)), post %>
+        </div>
+        <div class='col s9 <%= if post.image_url.nil? then 'offset-s3' end %>'>
+          <h4><%= link_to post.title, post %></h4>
+          <p><%= post.content %></p>
+          <%= link_to 'Edit', edit_post_path(post), class: 'waves-effect waves-light btn' %>
+          <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'waves-effect waves-light btn red' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

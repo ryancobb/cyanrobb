@@ -1,0 +1,13 @@
+@import "materialize/components/color";
+$primary-color: color("blue-grey", "darken-4") !default;
+@import 'materialize';
+
+nav {
+  .brand-logo {
+    padding-left: 10px;
+    .logo_letter {
+      color: #e57373;
+      font-weight: bold  
+    }
+  }
+}
