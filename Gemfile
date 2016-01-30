@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'materialize-sass'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'figaro'
+gem 'fog'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
