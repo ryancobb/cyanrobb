@@ -11,12 +11,14 @@
           <p><%= link_to post.content, post %></p>
         </div>
       </div>
-      <div class='row'>
-        <div class='col s12'>
-          <%= link_to 'Edit', edit_post_path(post), class: 'waves-effect waves-light btn' %>
-          <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'waves-effect waves-light btn red' %>
+      <% if current_user.try(:admin?) %>
+        <div class='row admin_actions'>
+          <div class='col s12'>
+            <%= link_to 'Edit', edit_post_path(post), class: 'waves-effect waves-light btn' %>
+            <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'waves-effect waves-light btn red' %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
     <div class='parallax'>
       <%= image_tag(post.image_url) %>

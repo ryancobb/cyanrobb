@@ -6,6 +6,7 @@ gem 'mini_magick'
 gem 'figaro'
 gem 'fog'
 gem 'bcrypt'
+gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
