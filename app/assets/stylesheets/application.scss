@@ -1,15 +1,33 @@
+/*
+ *= require_self
+ *= require_tree .
+*/
+
 @import "materialize/components/color";
-$primary-color: color("blue-grey", "darken-4") !default;
+$primary-color: color("#ffffff", "white") !default;
 @import 'materialize';
 
 nav {
+  ul {
+    li.active, li:hover  {
+      background-color: rgba(153, 169, 184, 0.36);
+    }
+    a {
+      color: black;
+    }
+  }
   .brand-logo {
-    padding-left: 10px;
+    padding-left: 20px;
+    color: black;
     .logo_letter {
-      color: #e57373;
+      color: #8B9BB2;
       font-weight: bold  
     }
   }
+}
+
+.btn {
+  background-color: #002760;
 }
 
 #subnav {
