@@ -3,39 +3,64 @@
  *= require_tree .
 */
 
-@import "materialize/components/color";
-$primary-color: color("#ffffff", "white") !default;
+@import 'materialize/components/color';
+$primary-color: color('#ffffff', 'white') !default;
 @import 'materialize';
+
+$nav-button-color: rgba(153, 169, 184, .36);
+$black: #000;
+$accent-color: #8b9bb2;
+$blue: #002760;
+$purple: #956982;
+$alert: #b71c1c;
+$success: #26a69a;
+
+.welcome-banner {
+  background-image: image-url('jumbotron.jpg');
+  background-size: cover;
+  height: 600px;
+  width: 100%;
+  padding: 75px;
+}
 
 nav {
   ul {
-    li.active, li:hover  {
-      background-color: rgba(153, 169, 184, 0.36);
-    }
-    a {
-      color: black;
+    li {
+      &.active {
+        background-color: $nav-button-color;
+        }
+
+      &:hover {
+        background-color: $nav-button-color;
+      }
+
+      a {
+        color: $black;
+      }
     }
   }
+
   .brand-logo {
+    color: $black;
     padding-left: 20px;
-    color: black;
-    .logo_letter {
-      color: #8B9BB2;
-      font-weight: bold  
+
+    .logo-letter {
+      color: $accent-color;
+      font-weight: bold;
     }
   }
 }
 
 .btn {
-  background-color: #002760;
+  background-color: $blue;
 
   &:hover {
-    background-color: #956982;
+    background-color: $purple;
   }
 }
 
 #subnav {
-  background-color: #b71c1c;
+  background-color: $alert;
   height: 30px;
   line-height: 30px;
 
@@ -47,23 +72,23 @@ nav {
 }
 
 .alert-danger {
-  color: #b71c1c;
+  color: $alert;
   font-weight: bold;
 }
 
 .alert-success {
-  color: #26a69a;
+  color: $success;
   font-weight: bold;
 }
 
-.alert_message {
-  color: #b71c1c;
+.alert-message {
+  color: $alert;
 }
 
 .social {
   width: 40px;
 }
 
-.navdark {
-  color: #8B9BB2;
+.mobile-nav-button {
+  color: $accent-color;
 }

@@ -1,18 +1,18 @@
 <nav>
-  <div class='nav-wrapper white'>
-    <a href='/' class='brand-logo'>
-      <span class='logo_letter'>c</span>yan<span class='logo_letter'>r</span>obb
+  <div class="nav-wrapper white">
+    <a href='/' class="brand-logo">
+      <span class='logo-letter'>c</span>yan<span class='logo-letter'>r</span>obb
     </a>
-    <a href="#" data-activates="side-menu" class="button-collapse"><i class="material-icons navdark">menu</i></a>
-    <ul class='right hide-on-med-and-down'>
+    <a href="#" data-activates="side-menu" class="button-collapse"><i class="material-icons mobile-nav-button">menu</i></a>
+    <ul class="right hide-on-med-and-down">
       <%= nav_link 'About', about_path %>
-      <%= nav_link 'Portfolio', '#' %>
+      <%= nav_link 'Portfolio', portfolio_path %>
       <%= nav_link 'Blog', posts_path %>
       <%= nav_link 'Contact', '#' %>
       <% if current_user %>
         <li><%=link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
-      <% else %> 
-        <li><%=link_to 'Sign in', new_user_session_path %></li>      
+      <% else %>
+        <li><%=link_to 'Sign in', new_user_session_path %></li>
       <% end %>
     </ul>
 
@@ -23,8 +23,8 @@
       <%= nav_link 'Contact', '#' %>
       <% if current_user %>
         <li><%=link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
-      <% else %> 
-        <li><%=link_to 'Sign in', new_user_session_path %></li>      
+      <% else %>
+        <li><%=link_to 'Sign in', new_user_session_path %></li>
       <% end %>
     </ul>
   </div>

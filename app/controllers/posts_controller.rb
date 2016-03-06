@@ -1,5 +1,6 @@
+# Controller for blog posts
 class PostsController < ApplicationController
-  before_filter :ensure_admin!, except: [ :index, :show ]
+  before_filter :ensure_admin!, except: [:index, :show]
 
   def index
     @posts = Post.all
@@ -8,7 +9,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
   end
-  
+
   def new
     @post = Post.new
   end
@@ -44,16 +45,13 @@ class PostsController < ApplicationController
   end
 
   private
+
     def post_params
       params.require(:post).permit(:title, :content, :image)
     end
 
     def ensure_admin!
-      if current_user.try(:admin?)
-        return true
-      else
-        redirect_to root_path
-      end
+      return true if current_user.try(:admin?)
+      redirect_to root_path
     end
-
 end
