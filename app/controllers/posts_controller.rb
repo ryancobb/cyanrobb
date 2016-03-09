@@ -8,17 +8,23 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @post_attachments = @post.post_attachments.all
   end
 
   def new
     @post = Post.new
+    @post_attachment = @post.post_attachments.build
   end
 
   def create
     @post = Post.new(post_params)
     @post.user_id = 1
+
     if @post.save
-      redirect_to @post
+      params[:post_attachments]['photo'].each do |p|
+        @post_attachment = @post.post_attachments.create!(:photo => p)
+      end
+      redirect_to @post, notice: 'Post was successfully created.'
     else
       render 'new'
     end
@@ -47,7 +53,7 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:title, :content, :image)
+      params.require(:post).permit(:title, :content, post_attachments_attributes: [:id, :post_id, :photo])
     end
 
     def ensure_admin!
