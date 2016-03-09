@@ -1,0 +1,9 @@
+<% flash.each do |message_type, message| %>
+  <div class='container'>
+    <div class='row card-panel alert alert-<%= message_type %>'>
+      <div>
+        <%= message %>
+      </div>
+    </div>
+  </div>
+<% end %>

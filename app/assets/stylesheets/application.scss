@@ -12,8 +12,8 @@ $black: #000;
 $accent-color: #8b9bb2;
 $blue: #002760;
 $purple: #956982;
-$alert: #b71c1c;
-$success: #26a69a;
+$alert: #FFDCDC;
+$success: #CCFFE3;
 
 .welcome-banner {
   background-image: image-url('jumbotron.jpg');
@@ -71,18 +71,16 @@ nav {
   }
 }
 
-.alert-danger {
-  color: $alert;
-  font-weight: bold;
+.alert {
+  margin-top: 15px;
 }
 
-.alert-success {
-  color: $success;
-  font-weight: bold;
+.alert-notice {
+  background-color: $success;
 }
 
-.alert-message {
-  color: $alert;
+.alert-alert {
+  background-color: $alert;
 }
 
 .social {
@@ -91,4 +89,13 @@ nav {
 
 .mobile-nav-button {
   color: $accent-color;
+}
+
+.footer {
+  margin-bottom: 0;
+}
+
+.login-button {
+  margin-top: 20px;
+  width: 100%;
 }
