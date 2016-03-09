@@ -1,3 +1,19 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.blog-block {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  color: white;
+  margin-bottom: 10px;
+
+  a {
+    color: inherit;
+  }
+}
+
+.blog-title {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}

@@ -1,30 +1,27 @@
 <% @posts.each do |post| %>
-  <div class='parallax-container valign-wrapper'>
-    <div class="container">
+    <div class='parallax-container valign-wrapper'>
+      <div class="container">
 
-      <div class='row'>
-          <h4><%= link_to post.title, post %></h4>
-      </div>
-
-      <div class="row">
-        <h6><%= time_ago_in_words(post.created_at) %> ago</h6>
-      </div>
-
-      <div class='row'>
-        <p><%= link_to post.content, post %></p>
-      </div>
-
-      <% if current_user.try(:admin?) %>
-        <div class='row admin_actions'>
-          <%= link_to 'Edit', edit_post_path(post), class: 'waves-effect waves-light btn' %>
-          <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'waves-effect waves-light btn red' %>
+        <div class='row blog-block'>
+          <h3 class="blog-title"><%= link_to post.title, post %></h3>
+          <h6 class="time-ago"><%= time_ago_in_words(post.created_at) %> ago</h6>
         </div>
-      <% end %>
-    </div>
 
-    <div class='parallax'>
-      <%= image_tag(post.image_url) %>
-    </div>
+        <div class='row blog-block'>
+          <p><%= link_to post.content, post %></p>
+        </div>
 
-  </div>
+        <% if current_user.try(:admin?) %>
+            <div class='row admin_actions'>
+              <%= link_to 'Edit', edit_post_path(post), class: 'waves-effect waves-light btn' %>
+              <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'waves-effect waves-light btn red' %>
+            </div>
+        <% end %>
+      </div>
+
+      <div class='parallax'>
+        <%= image_tag(post.image_url) %>
+      </div>
+
+    </div>
 <% end %>
