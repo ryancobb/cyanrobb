@@ -20,7 +20,7 @@
       </div>
 
       <div class='parallax'>
-        <%= image_tag(post.post_attachments.first.photo_url) %>
+        <%= image_tag(post.post_attachments.first.photo_url) if post.post_attachments %>
       </div>
 
     </div>
