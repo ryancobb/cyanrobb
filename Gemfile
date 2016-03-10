@@ -7,6 +7,7 @@ gem 'figaro'
 gem 'fog'
 gem 'bcrypt'
 gem 'devise'
+gem 'rails_12factor'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
