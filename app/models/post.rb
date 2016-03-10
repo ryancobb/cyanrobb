@@ -5,6 +5,5 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :post_attachments
 
   validates :title, presence: true
-  validates :content, presence: true
   validates :user_id, presence: true
 end
